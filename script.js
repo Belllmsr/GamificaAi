@@ -44,9 +44,9 @@ let banner = document.querySelector(".banner")
 //slide [2]-> "terceiro-banner",
 
 let slides = [
-    "primeiro-banner",
-    "segundo-banner",
-    "terceiro-banner",
+    "primeiro-banner", //0- 
+    "segundo-banner", //1
+    "terceiro-banner", //2
 ]
 
 let slideAtual = 0
@@ -57,9 +57,43 @@ function mostrarProximoSlide(){
 //Remover o slide anterior
 banner.classList.remove(slides[slideAtual])
 
-//Somar 1 na variavel slideAtual
-slideAtual++
+if(slideAtual < 2){
+    //Somar 1 na variavel slideAtual
+    slideAtual++
+
+}else{
+    //Voltar para o primeiro banner
+    slideAtual = 0
+}
 
 //Mostrar slide de acordo com o slide atual
-banner.classList.add(sçides[slideAtual])
+banner.classList.add(slides[slideAtual])
+}
+
+function mostrarSlideAnterior(){
+    //Remover o slide anterior
+    banner.classList.remove(slides[slideAtual])
+
+    if(slideAtual > 0){
+        //Subtrair 1 na variavel slideAtual
+        slideAtual--
+        
+    }else{
+        //Voltar para o ultimo slide
+        slideAtual = 2
+    }
+
+//Mostrar slide de acordo com o slide atual
+banner.classList.add(slides[slideAtual])
+}
+function selecionarSlide(indiceSlide){
+    //remove slide atual
+    banner.classList.remove(slides[slideAtual])
+
+//atualiza a variavel com o indice de slide selecionado
+    slideAtual = indiceSlide
+
+    banner.classList.add(slides[slideAtual])
+
+
 }

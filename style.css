@@ -50,7 +50,7 @@ html {
 }
 
 .segundo-banner{
-    background-image: linear-gradient(90deg, rgba(24, 104, 36, 1) 0%, rgba(24, 104, 36, 1) 100%), url(img/bg-room.png);
+    background-image: linear-gradient(90deg, rgba(24, 104, 36, 1) 0%, rgba(24, 104, 36, 0.8) 100%), url(img/bg-room.png);
 
 }
 
@@ -81,6 +81,38 @@ html {
     right: 4%;
 }
 
+.botoes{
+    width: 150px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    bottom: 4%;
+
+    /* Centralizar usando position*/
+    /*adicionar left 50%*/
+    /*Usar funçao calc () para substituir matade da largura do elemento ex.: 75px */
+
+    left:calc(50% - 75px);
+    
+}
+
+
+.botoes button{
+    width: 30px;
+
+    display: unset;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.botoes button svg{
+    fill: #ffffff76;
+}
 
 header {
     height: 165px;
